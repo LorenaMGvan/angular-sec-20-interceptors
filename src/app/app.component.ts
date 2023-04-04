@@ -12,7 +12,12 @@ export class AppComponent {
   constructor ( private usuariosService: UsuariosService) {
 
     this.usuariosService.obtenerUsuarios()
-    .subscribe( resp => console.log(resp));
+    .subscribe( resp => {
+      console.log(resp)
+    }
+    , (error => {
+      console.log('error en el app component');
+    }));
     
   };
 
